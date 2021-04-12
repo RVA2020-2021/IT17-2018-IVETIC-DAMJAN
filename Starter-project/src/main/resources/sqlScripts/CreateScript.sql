@@ -15,6 +15,13 @@ CREATE TABLE obrazovanje(
 	opis varchar(500)
 );
 
+CREATE TABLE sektor(
+	id integer not null,
+	naziv varchar(100),
+	oznaka varchar(10),
+	preduzece integer not null
+);
+
 CREATE TABLE radnik(
 	id integer not null,
 	ime varchar(50),
@@ -32,12 +39,7 @@ CREATE TABLE preduzece(
 	opis varchar(500)
 );
 
-CREATE TABLE sektor(
-	id integer not null,
-	naziv varchar(100),
-	oznaka varchar(10),
-	preduzece integer not null
-);
+
 
 
 ALTER TABLE obrazovanje 

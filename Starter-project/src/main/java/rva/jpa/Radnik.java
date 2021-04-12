@@ -17,7 +17,7 @@ public class Radnik implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="RADNIK_ID_GENERATOR", sequenceName="RADNIK_SEQ")
+	@SequenceGenerator(name="RADNIK_ID_GENERATOR", sequenceName="RADNIK_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="RADNIK_ID_GENERATOR")
 	private Integer id;
 

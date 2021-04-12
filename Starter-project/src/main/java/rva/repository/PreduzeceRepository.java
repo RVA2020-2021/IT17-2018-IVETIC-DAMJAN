@@ -4,7 +4,6 @@ import java.util.Collection;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import rva.jpa.Obrazovanje;
 import rva.jpa.Preduzece;
 
 public interface PreduzeceRepository extends JpaRepository <Preduzece, Integer> {
