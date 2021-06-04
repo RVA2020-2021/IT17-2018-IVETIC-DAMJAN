@@ -1,5 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { Obrazovanje } from 'src/app/models/obrazovanje';
@@ -15,10 +17,16 @@ export class ObrazovanjeComponent implements OnInit, OnDestroy {
 
   displayedColumns = ['id', 'naziv','stepen strucne spreme', 'opis',  'actions'];
   dataSource: MatTableDataSource<Obrazovanje>
+  subscription: Subscription;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+
 
   constructor(private obrazovanjeService: ObrazovanjeService,
               private dialog: MatDialog) { }
-  subscription: Subscription;
+
+
+
 
 
   ngOnInit(): void {
@@ -33,6 +41,8 @@ export class ObrazovanjeComponent implements OnInit, OnDestroy {
     this.subscription = this.obrazovanjeService.getAllObrazovanja().subscribe(
       data => {
         this.dataSource = new MatTableDataSource(data);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
       }
     ),
     (error: Error) => {
@@ -48,6 +58,12 @@ export class ObrazovanjeComponent implements OnInit, OnDestroy {
         this.loadData();
       }
     })
+  }
+
+  applyFilter(filterValue: string){
+    filterValue=filterValue.trim();
+    filterValue=filterValue.toLowerCase();
+    this.dataSource.filter = filterValue;
   }
 
 }

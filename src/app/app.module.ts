@@ -29,6 +29,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { PreduzeceDialogComponent } from './components/dialogs/preduzece-dialog/preduzece-dialog.component';
+import { SektorDialogComponent } from './components/dialogs/sektor-dialog/sektor-dialog.component';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { RadnikDialogComponent } from './components/dialogs/radnik-dialog/radnik-dialog.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -42,7 +48,9 @@ import { PreduzeceDialogComponent } from './components/dialogs/preduzece-dialog/
     SektorComponent,
     RadnikComponent,
     ObrazovanjeDialogComponent,
-    PreduzeceDialogComponent
+    PreduzeceDialogComponent,
+    SektorDialogComponent,
+    RadnikDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +69,11 @@ import { PreduzeceDialogComponent } from './components/dialogs/preduzece-dialog/
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatSortModule,
+    MatPaginatorModule
 
   ],
   providers: [],
