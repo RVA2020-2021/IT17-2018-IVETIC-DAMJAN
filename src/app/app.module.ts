@@ -1,6 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
+import { HomeComponent } from './components/core/home/home.component';
+import { AuthorComponent } from './components/core/author/author.component';
+import { AboutComponent } from './components/core/about/about.component';
+import { ObrazovanjeComponent } from './components/obrazovanje/obrazovanje.component';
+import { PreduzeceComponent } from './components/preduzece/preduzece.component';
+import { SektorComponent } from './components/sektor/sektor.component';
+import { RadnikComponent } from './components/radnik/radnik.component';
+import { ObrazovanjeDialogComponent } from './components/dialogs/obrazovanje-dialog/obrazovanje-dialog.component';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,13 +20,16 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule} from '@angular/material/list';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatExpansionModule} from '@angular/material/expansion';
-import { HomeComponent } from './components/core/home/home.component';
-import { AuthorComponent } from './components/core/author/author.component';
-import { AboutComponent } from './components/core/about/about.component';
-import { ObrazovanjeComponent } from './components/obrazovanje/obrazovanje.component';
-import { PreduzeceComponent } from './components/preduzece/preduzece.component';
-import { SektorComponent } from './components/sektor/sektor.component';
-import { RadnikComponent } from './components/radnik/radnik.component';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { PreduzeceDialogComponent } from './components/dialogs/preduzece-dialog/preduzece-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +40,9 @@ import { RadnikComponent } from './components/radnik/radnik.component';
     ObrazovanjeComponent,
     PreduzeceComponent,
     SektorComponent,
-    RadnikComponent
+    RadnikComponent,
+    ObrazovanjeDialogComponent,
+    PreduzeceDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +53,16 @@ import { RadnikComponent } from './components/radnik/radnik.component';
     MatSidenavModule,
     MatListModule,
     MatGridListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    HttpClientModule,
+    MatToolbarModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
