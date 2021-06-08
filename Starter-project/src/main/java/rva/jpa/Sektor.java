@@ -30,7 +30,7 @@ public class Sektor implements Serializable {
 
 	@JsonIgnore
 	//bi-directional many-to-one association to Radnik
-	@OneToMany(mappedBy="sektor")
+	@OneToMany(mappedBy="sektor", cascade = {CascadeType.DETACH, CascadeType.REMOVE})
 	private List<Radnik> radniks;
 
 	//bi-directional many-to-one association to Preduzece
