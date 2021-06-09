@@ -35,6 +35,7 @@ export class RadnikComponent implements OnInit, OnDestroy, OnChanges {
   }
 
 
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
