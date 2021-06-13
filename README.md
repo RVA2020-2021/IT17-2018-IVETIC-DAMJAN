@@ -1,2 +1,2 @@
-https://elated-lichterman-59dc17.netlify.app/home
+https://awesome-yalow-d9e5df.netlify.app/sektor
 https://rvabekend.herokuapp.com/
